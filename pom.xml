@@ -1,0 +1,188 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>spark-streaming</groupId>
+	<artifactId>spark-streaming</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	
+	<!-- <repositories>
+    <repository>
+        <id>cloudera</id>
+        <url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>
+    </repository>
+	</repositories> -->
+	<dependencies>
+	  
+	<!-- <dependency>
+			<groupId>org.scala-lang</groupId>
+			<artifactId>scala-library</artifactId>
+			<version>2.11.8</version>
+		</dependency> -->
+	<!-- 	<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-core_2.11</artifactId>
+			<version>1.6.0</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.spark</groupId>
+		    <artifactId>spark-hive_2.11</artifactId>
+		    <version>1.6.0</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.spark</groupId>
+		    <artifactId>spark-sql_2.11</artifactId>
+		    <version>1.6.0</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.spark</groupId>
+		    <artifactId>spark-streaming_2.11</artifactId>
+		    <version>1.6.0</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.spark</groupId>
+		    <artifactId>spark-streaming-kafka_2.11</artifactId>
+		    <version>1.6.0</version>
+		</dependency> -->
+	 	<dependency>
+		    <groupId>org.apache.hbase</groupId>
+		    <artifactId>hbase-common</artifactId>
+		    <version>1.2.0-cdh5.8.3</version>
+		</dependency>
+	  <dependency>
+		    <groupId>org.apache.hbase</groupId>
+		    <artifactId>hbase-client</artifactId>
+		    <version>1.2.0-cdh5.8.3</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.hbase</groupId>
+		    <artifactId>hbase-protocol</artifactId>
+		    <version>1.2.0-cdh5.8.3</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.hbase</groupId>
+		    <artifactId>hbase-server</artifactId>
+		    <version>1.2.0-cdh5.8.3</version>
+		</dependency>
+        <!-- <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>2.10.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-compiler</artifactId>
+            <version>2.10.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-reflect</artifactId>
+            <version>2.10.6</version>
+        </dependency> -->
+        <!-- <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.12</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.collections</groupId>
+            <artifactId>google-collections</artifactId>
+            <version>1.0</version>
+        </dependency> -->
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-core_2.10</artifactId>
+            <version>1.5.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-streaming_2.10</artifactId>
+            <version>1.5.2</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-streaming-kafka_2.10</artifactId>
+            <version>1.5.2</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-client -->
+<dependency>
+    <groupId>org.apache.hadoop</groupId>
+    <artifactId>hadoop-client</artifactId>
+    <version>2.2.0</version>
+</dependency>
+        
+	</dependencies>
+
+	<build>
+		<finalName>sparkstreamig2hfile</finalName>
+		<pluginManagement>
+		<plugins>
+			<plugin>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<configuration>
+					<downloadsources>true</downloadsources>
+					<buildcommands>
+						<buildcommand>org.scala-ide.sdt.core.scalabuilder</buildcommand>
+					</buildcommands>
+					<projectnatures>
+						<projectnature>org.scala-ide.sdt.core.scalanature</projectnature>
+						<projectnature>org.eclipse.jdt.core.javanature</projectnature>
+					</projectnatures>
+					<classpathcontainers>
+						<classpathcontainer>org.eclipse.jdt.launching.JRE_CONTAINER</classpathcontainer>
+						<classpathcontainer>org.scala-ide.sdt.launching.SCALA_CONTAINER</classpathcontainer>
+					</classpathcontainers>
+					<sourceincludes>
+						<sourceinclude>**/*.scala</sourceinclude>
+						<sourceinclude>**/*.xml</sourceinclude>
+					</sourceincludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.scala-tools</groupId>
+				<artifactId>maven-scala-plugin</artifactId>
+				<version>2.15.0</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>compile</goal>
+							<!-- <goal>testCompile</goal> -->
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- <plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>build-helper-maven-plugin</artifactId> 
+				<executions> <execution> <id>add-source</id> <phase>generate-sources</phase> 
+				<goals> <goal>add-source</goal> </goals> <configuration> <sources> <source>src/main/scala</source> 
+				</sources> </configuration> </execution> <execution> <id>add-test-source</id> 
+				<phase>generate-sources</phase> <goals> <goal>add-test-source</goal> </goals> 
+				<configuration> <sources> <source>src/test/scala</source> </sources> </configuration> 
+				</execution> </executions> </plugin> -->
+			<!-- 指定jar的main-class -->
+			<plugin>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<addMavenDescriptor>false</addMavenDescriptor>
+						<manifest> 
+						<!-- <mainClass>com.dinglicom.problemdelimit.ProblemDelimit</mainClass> --> 
+						<mainClass>com.dinglicom.hbase.HbaseLoad</mainClass>
+						</manifest>
+					</archive>
+					<!-- <excludes>
+						<exclude>**/*.properties</exclude>
+						<exclude>**/*.xml</exclude>
+					</excludes> -->
+				</configuration>
+			</plugin>
+			<!-- <plugin> <artifactId>maven-assembly-plugin</artifactId> <configuration> 
+				<archive> <manifest> <mainClass>com.dinglicom.problemdelimit.ProblemDelimit</mainClass> 
+				</manifest> </archive> <descriptorRefs> <descriptorRef>jar-with-dependencies</descriptorRef> 
+				</descriptorRefs> <excludes> <exclude>*.properties</exclude> <exclude>*.xml</exclude> 
+				</excludes> </configuration> <executions> <execution> <id>make-assembly</id> 
+				<phase>package</phase> <goals> <goal>single</goal> </goals> </execution> 
+				</executions> </plugin> -->
+		</plugins>
+		</pluginManagement>
+	</build>
+</project>
